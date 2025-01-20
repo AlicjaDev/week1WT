@@ -22,3 +22,15 @@ self.addEventListener('fetch', (event) => {
             .then((response) => response || fetch(event.request))
     );
 });
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js', {
+            scope: '/'  // Define the scope if needed (for example, '/' for the whole app)
+        }).then((registration) => {
+            console.log('Service Worker registered with scope:', registration.scope);
+        }).catch((error) => {
+            console.log('Service Worker registration failed:', error);
+        });
+    });
+}
