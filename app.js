@@ -20,19 +20,19 @@ taskList.addEventListener('click', (e) => {
     }
 });
 
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/week1WT/service-worker.js')
-            .then(reg => console.log('Service Worker Registered'))
-            .catch(err => console.error('Service Worker Error:', err));
-    });
-}
+// if ('serviceWorker' in navigator) {
+//     window.addEventListener('load', () => {
+//         navigator.serviceWorker.register('/week1WT/service-worker.js')
+//             .then(reg => console.log('Service Worker Registered'))
+//             .catch(err => console.error('Service Worker Error:', err));
+//     });
+// }
 
 
 const sw = new URL('service-worker.js', import.meta.url)
 if ('serviceWorker' in navigator) {
     const s = navigator.serviceWorker; s.register(sw.href, {
-        scope: '/YOUR_REPOSITORY_NAME_HERE/'
+        scope: 'https://alicjadev.github.io/week1WT/'
     })
         .then(_ => console.log('Service Worker Registered for scope:', sw.href, 'with', import.meta.url))
         .catch(err => console.error('Service Worker Error:', err));
