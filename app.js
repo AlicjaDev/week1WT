@@ -22,7 +22,7 @@ taskList.addEventListener('click', (e) => {
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
+        navigator.serviceWorker.register('/week1WT/service-worker.js')
             .then(reg => console.log('Service Worker Registered'))
             .catch(err => console.error('Service Worker Error:', err));
     });
