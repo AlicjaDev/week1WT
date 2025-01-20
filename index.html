@@ -16,7 +16,7 @@
         <ul id="taskList"></ul>
     </div>
     <script src="app.js"></script>
-    <script>
+    <script type="module" src ="app.js">
         if ('serviceWorker' in navigator) {
             // navigator.serviceWorker.register('/service-worker.js')
             navigator.serviceWorker.register(new URL('/service-worker.js', import.meta.url))
@@ -24,6 +24,6 @@
                 .catch(err => console.error('Service Worker Error:', err));
         }
     </script>
-    <script type="module"  src ="app.js"></script>
+    <!-- <script type="module" src ="app.js"></script> -->
 </body>
 </html>
