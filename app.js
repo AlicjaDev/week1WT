@@ -131,3 +131,29 @@ function sanitizeInput(input) {
 
 
 const taskText = sanitizeInput(taskInput.value.trim());
+
+
+
+
+import log from "loglevel";
+// Set the log level (trace, debug, info, warn, error)
+log.setLevel("info");
+// Example logs
+log.info("Application started");
+log.debug("Debugging information");
+log.error("An error occurred");
+
+
+
+function addTask(task) {
+    try {
+    // Log user action
+    log.info(`Task added: ${task}`);
+    // Add task to the list
+    tasks.push(task);
+    renderTasks();
+    } catch (error) {
+    // Log error
+    log.error("Error adding task", error);
+    }
+   }
